@@ -2,6 +2,7 @@
 
 use crate::problem1::{sum, dedup, filter};
 use crate::problem2::sieve;
+use crate::problem3::{hanoi, Peg};
 
 #[test]
 fn test_sum_sm() {
@@ -28,4 +29,11 @@ fn test_filter_sm() {
 #[test]
 fn test_sieve_sm() {
     assert_eq!(sieve(25), vec![2,3,5,7,11,13,17,19,23])
+}
+
+#[test]
+fn test_hanoi_1() {
+    let res = hanoi(1, Peg::A, Peg::B, Peg::C);
+    assert_eq!(vec![(Peg::A, Peg::C)], res);
+    assert_eq!(1, res.len());
 }
